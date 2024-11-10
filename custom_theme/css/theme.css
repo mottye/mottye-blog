@@ -1,0 +1,202 @@
+/* 基本設定 */
+:root {
+    --primary-color: #7c3aed;
+    --accent-color: #a78bfa;
+    --text-color: #374151;
+    --background-color: #ffffff;
+    --header-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* コンテナ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ヘッダー */
+.site-header {
+    background: var(--background-color);
+    border-bottom: 1px solid #eee;
+    height: var(--header-height);
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.site-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.site-title .material-symbols-rounded {
+    font-size: 28px;
+}
+
+/* ナビゲーション */
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    color: var(--text-color);
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* メインコンテンツ */
+main {
+    padding: 2rem 0;
+}
+
+/* 見出し */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+}
+
+/* リンク */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* フッター */
+footer {
+    border-top: 1px solid #eee;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* メニューボタンのスタイル */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+}
+
+/* アイコンの基本スタイル */
+.material-symbols-rounded {
+    vertical-align: middle;
+    font-size: 24px;
+}
+
+/* フッター */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.social-links .material-symbols-rounded {
+    font-size: 24px;
+}
+
+/* メニューボタン */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    align-items: center;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        background: var(--background-color);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links a {
+        padding: 0.75rem 1rem;
+        width: 100%;
+    }
+}
